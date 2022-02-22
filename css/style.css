@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(23.8%, #f7f7f7), color-stop(92%, #dde8fc));
+  background-image: linear-gradient(0deg, #f7f7f7 23.8%, #dde8fc 92%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.music-container {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 20px 20px 0 rgba(169, 191, 252, 0.6);
+          box-shadow: 0 20px 20px 0 rgba(169, 191, 252, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  z-index: 10;
+}
+
+.music-container.play .img-container img {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.music-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  opacity: 0;
+  padding: 10px 10px 10px 150px;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+}
+
+.music-info h4 {
+  margin: 0;
+}
+
+.img-container {
+  position: relative;
+  width: 110px;
+}
+
+.img-container::after {
+  content: '';
+  background-color: #fff;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-48%, -72%);
+          transform: translate(-48%, -72%);
+}
+
+.img-container img {
+  width: inherit;
+  height: 110px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: #fff;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.progress {
+  background-color: #3734e6;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: width 0.1s linear;
+  transition: width 0.1s linear;
+}
+
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 8px;
+  width: 100%;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  .music-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
